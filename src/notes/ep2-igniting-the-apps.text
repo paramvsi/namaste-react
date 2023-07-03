@@ -1,0 +1,13 @@
+#Notes
+
+-- npm is not node package manager, it manages the packages but it does not stand for node package manager.
+-- check about npm in npmjs
+-- its standard library for all packages.
+-- package.json is configuration for npm.
+-- there are two type of dependencies we can use in a project, dev dependencies and normal dependencies. Dev dependencies can
+only be used in development enviornment. -D is the flag to install dev dependencies. npm install -D {{depedency-name}}
+-- in front of dep version we can have caret ^ and tilde sign ~, It will help to manage the versions.
+-- If we put ^ in front of version a minor update will automatically updates.
+-- If we put ~ in front of version a major update will automatically updates.
+-- package-lock.json -> keeps track of exact version that was installed intially along with dependency information.
+--
