@@ -1,0 +1,10 @@
+#Notes
+------
+
+-- We can create an element in html using javascript document.createElement method.
+-- We can append the created element in parent element using parent.appendChild method.
+-- React provides two files react.js and react-dom.js, while react.js is the main core component of react, react-dom acts as a bridge
+   between the react and dom.
+-- React.createElement is an object or React element which holds the element tagname and props (attributes + children).
+-- React.render methods takes createElement object and converts it to html tag to put it finally in the dom.
+
