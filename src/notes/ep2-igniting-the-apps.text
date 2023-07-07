@@ -10,4 +10,6 @@ only be used in development enviornment. -D is the flag to install dev dependenc
 -- If we put ^ in front of version a minor update will automatically updates.
 -- If we put ~ in front of version a major update will automatically updates.
 -- package-lock.json -> keeps track of exact version that was installed intially along with dependency information.
---
+-- npx executes the package. npm just install the package.
+-- Parcel or any other build tool like webpack does HMR: Hot Module Replacement.
+-- 

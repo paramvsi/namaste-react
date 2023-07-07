@@ -1,0 +1,8 @@
+#Notes
+------
+
+-- npm scripts are industry standards.
+-- JSX is not html written in JS. JSX is a html like syntax.
+-- Component composition is a component inside a component.. <Heading><Title /></Heading>
+-- How jsx helps prevent XSS?
+-- 
