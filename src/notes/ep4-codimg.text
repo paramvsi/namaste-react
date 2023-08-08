@@ -1,0 +1,8 @@
+#Notes
+------
+
+-- Config Driven UI -- Based on location or any other config we can send different data. So UI is data driven.
+-- Why we use key in react -- ?? when we loop over childrens in list or when component are in same tree level, 
+   react optimises it render cycles, whenever a new key comes in, react dom will insert that key in its place. 
+   If there is no key, react will render all component in same level. 
+   
