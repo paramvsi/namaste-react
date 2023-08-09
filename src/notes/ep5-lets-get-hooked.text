@@ -1,0 +1,14 @@
+#Notes
+----------------------------------------------------------------
+
+1. There are two types of exports Named export (export const ... = {}) and Default export (export default Name).
+2. Hooks : Normal utility functions. Just import the functions to use them.
+3. Two important hooks are useState (use to generate superpowerful react state variables) and useEffect.
+4. Whenever a state variable is updated, react will re render the component. 
+5. React uses Reconcialition algorithm also known as React Fibre.
+6. React when creates a component creates a virtual dom. Its a represenation of the actual dom and a normal JS nested object. 
+7. Diff algorithm finds the difference between two different virtual doms. Old and the updated one. It will calculate the difference
+and then re-render the main dom with update. 
+8. In React 16, React Fibre came which is new way of using diff algorithm. This diff algorithm makes React faster. 
+9. Read about this. actdlite/react-fibre-architecture.
+10. 
