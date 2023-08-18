@@ -1,0 +1,15 @@
+#Notes
+================================================================
+
+1. useEffect: if no dependency array, useEffect is called on every component rendered.
+              if dependency array is empty, useEffect is called on initial render just once.
+              if dependency array has a dependency, useEffect is called when dependency changes.
+
+2. Never call useState hook outside of the component.
+3. Never create useState inside of if else -- it will create inconsitency in the component. Also, not in loop or functions.
+4. React router dom: createRouterBrowser, RouterProvider, Outlet.
+5. Error element in react router dom. Also, a hook called useRouterError.
+6. There are two types of routing -- cliet side and server side. In server side, whole reloading is done and call to server is 
+   made and the server sends the new page. Client side routing happens in SPA, just loads the component, no network call is made.
+7. Dynamic routing: example /abc/:dynamic-data. 
+8. use useParam hook to extract the dynamic data from route.
