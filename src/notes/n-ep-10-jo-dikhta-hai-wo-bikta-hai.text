@@ -1,0 +1,10 @@
+#Notes
+================================================================
+
+1. Styled Components: Recommended way to add CSS in the react application. Styled-Components.com
+2. Tailwind CSS: Best way to add style in the react application.
+3. Other ways are Material UI, Chkara UI, Bootstrap.
+4. postCSS: tool to transform CSS with JS.
+5. import neccessary tailwind library into index.CSS
+6. w-[200px] -- dynamic width values.
+ 
