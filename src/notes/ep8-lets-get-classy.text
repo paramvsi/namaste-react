@@ -1,0 +1,21 @@
+#Notes
+================================================================
+
+1. Class based component is a normal JS class which extends React.Component.
+2. Use constructor to recieve props in class components. Also, super(props) in constructor is must.
+3. After recieving props use this.props.varname to get value.
+4. We can create a state variable using this.state = {} and add all the state variables inside that object.
+5. Never update state variables directly.
+6. In class components use this.setState() to update the state variables.
+7. Lifecycle of class components:
+   -- First constructor is called
+   -- Second render() method is called
+   -- 
+8. componentDidMount: a method which is called when component is mounted on the page. All parent componentDidMount method are called
+   after the child component is mounted properly. 
+9. componentDidMount is used to make api calls. This is like useEffect in Functional Component. This is done so that we call api after
+   rendering the component.
+10. React has two phase during mounting Render and Commit phase.
+11. componentDidUpdate: is called when component is updated.
+12. componentWillUnmount: is called when component is just about to be unmounted.
+13. useEffect has a return function which is called when component is unmounted. 
