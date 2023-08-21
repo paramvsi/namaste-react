@@ -1,0 +1,8 @@
+#Notes
+================================================================
+
+1. We can create custom hooks like normal JS functions.
+2. We have to do proper bundling of the app so that we can help reduce the load time of js files. This process is called
+chunking or code splitting or lazy loading or dynamic bundling.
+3. const varName = lazy(() => import("./module-to-import.js")); // lazy loading
+4. Read lazy loading in react documentation.
