@@ -1,0 +1,11 @@
+#Notes
+================================================================
+
+1. Higher order componenent: Which takes a componenent and return a componenent after enhancing that componenent by adding
+   extra features.
+2. State can be lifted to the parent componenent.
+3. Controlled componenet: A component whose state is Controlled by the parent componenent.
+4. Props Drilling: When data is passed parent to children in deeply nested components.  
+5. React Context: A global space where data is stored and accessible by all the components. Its the solution to props Drilling.
+6. Context provider can be user to get context value.
+7. 
