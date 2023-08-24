@@ -1,0 +1,12 @@
+#Notes
+================================================================
+Redux: state management library.
+1. Zustand is another library that provides state management in React.
+2. Redux toolkit another way of writing redux in more opinionated way.
+3. When an event occur an action is dispatched, this action calls a function(reducer) which modifies the store.
+4. To read the data we use selector. Selector will modify the react component. This is called subscribing to the store.
+5. Install @reduxjs/toolkit  and react-redux.
+6. Build a store -> connect store to app -> create slice -> dispatch -> subscribe.
+7. Use right part of the store to get the store items for better performance.
+8. Redux toolkit uses immer behind the scene to solve mutation of state problems.
+9. RTK Query API call.
