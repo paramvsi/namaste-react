@@ -16,7 +16,7 @@ const Restraunts = () => {
   };
 
   return (
-    <div className="flex flex-wrap justify-start items-center">
+    <div className="flex flex-wrap justify-start ">
       {restraunts.map((restaurant) => (
         <Block
           key={restaurant.info.name}
