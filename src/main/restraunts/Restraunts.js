@@ -1,35 +1,22 @@
 import React, { useEffect, useState } from "react";
 import Block from "../../components/block/Block";
+import { RESTAURANTS } from "../../data/restaurants";
 
 const Restraunts = () => {
   const [restraunts, setRestraunts] = useState([]);
 
   useEffect(() => {
-    const apiUrl =
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.4698577&lng=78.3578246&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
-
-    fetch(apiUrl)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-        return response.json();
-      })
-      .then((data) => {
-        setRestraunts(
-          data.data.cards[3].card.card.gridElements.infoWithStyle.restaurants
-        );
-
-        console.log(restraunts);
-      })
-      .catch((error) => {
-        // Handle errors
-        console.error("Error fetching data:", error);
-      });
+    setRestraunts(RESTAURANTS);
   }, []);
 
+  const mapCuisines = (restaurant) => {
+    const cuisines = restaurant.info.cuisines.join(", ");
+
+    return cuisines.length > 40 ? cuisines.substring(0, 40) + "..." : cuisines;
+  };
+
   return (
-    <div className="flex flex-wrap justify-between items-center">
+    <div className="flex flex-wrap justify-start items-center">
       {restraunts.map((restaurant) => (
         <Block
           key={restaurant.info.name}
@@ -37,7 +24,7 @@ const Restraunts = () => {
           imgId={restaurant.info.cloudinaryImageId}
           location={restaurant.info.areaName}
           rating={restaurant.info.avgRating}
-          cuisines={restaurant.info.cuisines}
+          cuisines={mapCuisines(restaurant)}
           time={restaurant.info.sla.deliveryTime}
         />
       ))}
