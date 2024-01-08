@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <div className="bg-black w-full flex justify-center  items-start text-white p-12">
+    <div className="bg-black w-full flex justify-center  items-start text-white p-5 lg:p-12">
       <div className="m-7">
         <p className="text-xl">AZ Foods</p>
         &copy; azfoods industries pvt inc.
