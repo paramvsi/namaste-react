@@ -6,7 +6,7 @@ const TopRestaurants = () => {
   const [restraunts, setRestraunts] = useState([]);
 
   useEffect(() => {
-    setRestraunts(RESTAURANTS.slice(0, 7));
+    setRestraunts(RESTAURANTS.slice(6, 13));
   }, []);
 
   const mapCuisines = (restaurant) => {

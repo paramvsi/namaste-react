@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Item from "../../components/item/Item";
 import { CATEGORIES } from "../../data/categories.ts";
+import { Link } from "react-router-dom";
 
 const Categories = () => {
   const [categories, setCategories] = useState([]);
@@ -12,11 +13,14 @@ const Categories = () => {
   return (
     <div className="flex flex-nowrap overflow-x-auto overflow-y-hidden no-scrollbar">
       {categories.map((category) => (
-        <Item
+        <Link
           key={category?.id}
-          name={category.action?.text}
-          image={category?.imageId}
-        />
+          to={`/product/${category.action?.text}`}
+          className="cursor-pointer"
+        >
+          {" "}
+          <Item name={category.action?.text} image={category?.imageId} />
+        </Link>
       ))}
     </div>
   );

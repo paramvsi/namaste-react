@@ -2,12 +2,14 @@ import React, { useEffect, useState } from "react";
 import Block from "../../components/block/Block";
 import { RESTAURANTS } from "../../data/restaurants";
 
-const Restraunts = () => {
+const Restraunts = ({ restaurants }) => {
   const [restraunts, setRestraunts] = useState([]);
 
   useEffect(() => {
-    setRestraunts(RESTAURANTS);
-  }, []);
+    setRestraunts(
+      restaurants && restaurants.length > 0 ? restaurants : RESTAURANTS
+    );
+  }, [restaurants]);
 
   const mapCuisines = (restaurant) => {
     const cuisines = restaurant.info.cuisines.join(", ");
