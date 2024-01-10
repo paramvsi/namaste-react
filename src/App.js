@@ -5,6 +5,7 @@ import Main from "./main/Main";
 import Footer from "./footer/Footer";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Product from "./product/Product";
+import Page404 from "./components/page-404/Page404";
 
 const App = () => {
   return (
@@ -13,7 +14,8 @@ const App = () => {
       <BrowserRouter>
         <Routes>
           <Route path="product/:id" element={<Product />} />
-          <Route path="home" element={<Main />} />
+          <Route path="/" element={<Main />} />
+          <Route path="*" element={<Page404 />} />
         </Routes>
       </BrowserRouter>
       <Footer />
