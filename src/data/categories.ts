@@ -1,3 +1,7 @@
+import { BIRYANI } from "./biriyani";
+import { CHINESE } from "./chinese";
+import { PIZZA } from "./pizza";
+
 export const CATEGORIES: Category[] = [
   {
     id: "750592",
@@ -332,6 +336,21 @@ export const CATEGORIES: Category[] = [
     entityId:
       "swiggy://collectionV2?collection_id=80439&tags=layout_CCS_PureVeg",
     frequencyCapping: {},
+  },
+];
+
+export const CATEGORIES_DATA = [
+  {
+    name: "Biryani",
+    data: BIRYANI,
+  },
+  {
+    name: "pizzas",
+    data: PIZZA,
+  },
+  {
+    name: "Chinese",
+    data: CHINESE,
   },
 ];
 

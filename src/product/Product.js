@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Restraunts from "../main/restraunts/Restraunts";
-import { BIRYANI } from "../data/biriyani";
+import { CATEGORIES_DATA } from "../data/categories.ts";
 
 const Product = () => {
   // Fetch product details based on productId
@@ -10,9 +10,13 @@ const Product = () => {
   const [restaurants, setRestaurants] = useState([]);
 
   useEffect(() => {
-    setSubTitle(BIRYANI.subTitle);
-    setRestaurants(BIRYANI.restaurants);
-  }, []);
+    const item = CATEGORIES_DATA.find((cat) => cat.name === params.id);
+
+    console.log(item.data);
+
+    setSubTitle(item.data.subTitle);
+    setRestaurants(item.data.restaurants);
+  }, [params.id]);
 
   return (
     <div>
