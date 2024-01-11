@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Block from "../../components/block/Block";
 import { RESTAURANTS } from "../../data/restaurants";
+import { Link } from "react-router-dom";
 
 const Restraunts = ({ restaurants }) => {
   const [restraunts, setRestraunts] = useState([]);
@@ -20,15 +21,21 @@ const Restraunts = ({ restaurants }) => {
   return (
     <div className="flex flex-wrap justify-start ">
       {restraunts.map((restaurant) => (
-        <Block
+        <Link
           key={restaurant.info.name}
-          name={restaurant.info.name}
-          imgId={restaurant.info.cloudinaryImageId}
-          location={restaurant.info.areaName}
-          rating={restaurant.info.avgRating}
-          cuisines={mapCuisines(restaurant)}
-          time={restaurant.info.sla.deliveryTime}
-        />
+          to={`/restaurant/${restaurant.info.id}`}
+          className="cursor-pointer"
+        >
+          <Block
+            key={restaurant.info.name}
+            name={restaurant.info.name}
+            imgId={restaurant.info.cloudinaryImageId}
+            location={restaurant.info.areaName}
+            rating={restaurant.info.avgRating}
+            cuisines={mapCuisines(restaurant)}
+            time={restaurant.info.sla.deliveryTime}
+          />
+        </Link>
       ))}
     </div>
   );

@@ -6,6 +6,7 @@ import Footer from "./footer/Footer";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Product from "./product/Product";
 import Page404 from "./components/page-404/Page404";
+import RestaurantDetails from "./main/restraunts/restaurant-details/RestaurantDetails";
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
       <Header />
       <BrowserRouter>
         <Routes>
+          <Route path="restaurant/:id" element={<RestaurantDetails />} />
           <Route path="product/:id" element={<Product />} />
           <Route path="/" element={<Main />} />
           <Route path="*" element={<Page404 />} />
