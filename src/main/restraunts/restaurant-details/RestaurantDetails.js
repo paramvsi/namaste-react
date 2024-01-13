@@ -23,14 +23,17 @@ const RestaurantDetails = () => {
         const data = await response.json();
         setRestaurant(data.data.cards[0].card.card.info);
 
-        const groupedCardMap = data.data.cards[2].groupedCard;
-        const cards = groupedCardMap.cardGroupMap.REGULAR.cards;
+        const card = data.data.cards.find((c) => !!c.groupedCard);
+
+        const cards = card.groupedCard.cardGroupMap.REGULAR.cards;
+        console.log(cards);
         const foodCats = [];
         cards.forEach((c) => {
           if (c && c.card) {
             foodCats.push(c.card.card);
           }
         });
+        console.log(foodCats);
         setFoodCategories(foodCats);
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -41,7 +44,7 @@ const RestaurantDetails = () => {
   }, [params.id]);
 
   return (
-    <div className="max-w-full mx-6 lg:max-w-6xl lg:mx-auto p-20">
+    <div className="max-w-full mx-6 py-4 px-0 lg:max-w-6xl lg:mx-auto lg:p-20">
       {restaurant && (
         <>
           <RestaurantHeader restaurant={restaurant} />
