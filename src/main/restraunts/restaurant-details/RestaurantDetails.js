@@ -22,18 +22,14 @@ const RestaurantDetails = () => {
         }
         const data = await response.json();
         setRestaurant(data.data.cards[0].card.card.info);
-
         const card = data.data.cards.find((c) => !!c.groupedCard);
-
         const cards = card.groupedCard.cardGroupMap.REGULAR.cards;
-        console.log(cards);
         const foodCats = [];
         cards.forEach((c) => {
           if (c && c.card) {
             foodCats.push(c.card.card);
           }
         });
-        console.log(foodCats);
         setFoodCategories(foodCats);
       } catch (error) {
         console.error("Error fetching data:", error);
