@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import RestaurantHeader from "./restaurant-header/RestaurantHeader";
+import FoodCategory from "./food-category/FoodCategory";
 
 const RestaurantDetails = () => {
   const params = useParams();
@@ -35,11 +36,16 @@ const RestaurantDetails = () => {
     fetchData();
   }, [params.id]);
 
+  console.log(foodCategories);
+
   return (
     <div className="max-w-full mx-6 lg:max-w-6xl lg:mx-auto p-20">
       {restaurant && (
         <>
           <RestaurantHeader restaurant={restaurant} />
+          {foodCategories.map((fc) => (
+            <FoodCategory key={fc.title} foodCategory={fc} />
+          ))}
         </>
       )}
     </div>
