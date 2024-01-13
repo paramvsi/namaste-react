@@ -8,7 +8,7 @@ const RestaurantHeader = ({ restaurant }) => {
     <>
       <div className="flex justify-between items-center">
         <div>
-          <h2 className="text-2xl font-semibold text-gray-800">
+          <h2 className="text-3xl font-semibold text-gray-800">
             {restaurant.name}
           </h2>
           <p className="text-sm text-gray-500">

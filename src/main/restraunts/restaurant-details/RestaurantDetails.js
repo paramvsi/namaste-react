@@ -8,6 +8,10 @@ const RestaurantDetails = () => {
   const [restaurant, setRestaurant] = useState();
   const [foodCategories, setFoodCategories] = useState();
 
+  const [open, setOpen] = useState("Recommended");
+
+  const handleOpen = (value) => setOpen(open === value ? "" : value);
+
   useEffect(() => {
     const apiUrl = `https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=17.4698577&lng=78.3578246&restaurantId=${params.id}&catalog_qa=undefined&submitAction=ENTER`;
     const fetchData = async () => {
@@ -36,16 +40,23 @@ const RestaurantDetails = () => {
     fetchData();
   }, [params.id]);
 
-  console.log(foodCategories);
-
   return (
     <div className="max-w-full mx-6 lg:max-w-6xl lg:mx-auto p-20">
       {restaurant && (
         <>
           <RestaurantHeader restaurant={restaurant} />
-          {foodCategories.map((fc) => (
-            <FoodCategory key={fc.title} foodCategory={fc} />
-          ))}
+          {foodCategories.map((fc) =>
+            fc.title ? (
+              <FoodCategory
+                key={fc.title}
+                foodCategory={fc}
+                open={open}
+                handleOpen={handleOpen}
+              />
+            ) : (
+              <></>
+            )
+          )}
         </>
       )}
     </div>
