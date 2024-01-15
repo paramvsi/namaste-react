@@ -5,7 +5,6 @@ import vegUrl from "../../../../assets/images/veg.png";
 import nonVegUrl from "../../../../assets/images/non-veg.png";
 
 const FoodInfo = ({ info }) => {
-  console.log(info);
   return (
     <div className="flex justify-between items-center border-b-2 border-gray-300 min-h-24 p-5">
       <div>

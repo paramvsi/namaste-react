@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   Accordion,
   AccordionHeader,
@@ -42,11 +42,25 @@ const FoodCategory = ({ foodCategory, open, handleOpen }) => {
           {foodCategory.itemCards ? `(${foodCategory.itemCards?.length})` : ""}
         </AccordionHeader>
         <AccordionBody>
-          {foodCategory.itemCards ? (
-            foodCategory.itemCards.map((ic) => <FoodInfo info={ic.card.info} />)
-          ) : (
-            <></>
-          )}
+          {foodCategory.itemCards
+            ? foodCategory.itemCards.map((ic) => (
+                <FoodInfo key={ic.card.info.id} info={ic.card.info} />
+              ))
+            : foodCategory.categories.map((cat) => (
+                <>
+                  <Accordion open={true}>
+                    <AccordionHeader className="text-lg font-bold text-gray-800">
+                      {cat.title}
+                    </AccordionHeader>
+
+                    <AccordionBody>
+                      {cat.itemCards.map((ic) => (
+                        <FoodInfo key={ic.card.info.id} info={ic.card.info} />
+                      ))}
+                    </AccordionBody>
+                  </Accordion>
+                </>
+              ))}
         </AccordionBody>
       </Accordion>
     </>

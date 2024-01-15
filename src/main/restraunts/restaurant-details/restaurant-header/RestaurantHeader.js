@@ -23,7 +23,7 @@ const RestaurantHeader = ({ restaurant }) => {
             <FaStar className="text-green-700 mr-1" />
             {restaurant.avgRating}
           </div>
-          <div className="text-xs text-gray-800 font-semibold mx-2 py-2 border-t-2 border-t-gray-300">
+          <div className="text-center text-xs text-gray-800 font-semibold mx-2 py-2 border-t-2 border-t-gray-300">
             {restaurant.totalRatingsString}
           </div>
         </div>
