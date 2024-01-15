@@ -4,6 +4,7 @@ import { TbDiscount2 } from "react-icons/tb";
 import { MdOutlineSupportAgent } from "react-icons/md";
 import { FaUser } from "react-icons/fa";
 import Link from "../../components/link/Link";
+import { FaCartPlus } from "react-icons/fa";
 
 const Navbar = () => {
   const links = [
@@ -11,6 +12,7 @@ const Navbar = () => {
     { component: <TbDiscount2 />, name: "Offers" },
     { component: <MdOutlineSupportAgent />, name: "Help" },
     { component: <FaUser />, name: "Sign In" },
+    { component: <FaCartPlus />, name: "Cart" },
   ];
   return (
     <nav className="flex justify-between items-center ">
