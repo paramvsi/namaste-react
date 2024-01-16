@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import RestaurantHeader from "./restaurant-header/RestaurantHeader";
 import FoodCategory from "./food-category/FoodCategory";
+import DetailsShimmer from "./DetailsShimmer";
 
 const RestaurantDetails = () => {
   const params = useParams();
@@ -41,7 +42,7 @@ const RestaurantDetails = () => {
 
   return (
     <div className="max-w-full mx-6 py-4 px-0 lg:max-w-6xl lg:mx-auto lg:p-20">
-      {restaurant && (
+      {restaurant ? (
         <>
           <RestaurantHeader restaurant={restaurant} />
           {foodCategories.map((fc) =>
@@ -57,6 +58,8 @@ const RestaurantDetails = () => {
             )
           )}
         </>
+      ) : (
+        <DetailsShimmer />
       )}
     </div>
   );
