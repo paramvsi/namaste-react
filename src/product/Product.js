@@ -12,8 +12,6 @@ const Product = () => {
   useEffect(() => {
     const item = CATEGORIES_DATA.find((cat) => cat.name === params.id);
 
-    console.log(item.data);
-
     setSubTitle(item.data.subTitle);
     setRestaurants(item.data.restaurants);
   }, [params.id]);
