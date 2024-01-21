@@ -5,6 +5,10 @@ import vegUrl from "../../../../assets/images/veg.png";
 import nonVegUrl from "../../../../assets/images/non-veg.png";
 
 const FoodInfo = ({ info }) => {
+  const addToCart = (product) => {
+    console.log(product);
+  };
+
   return (
     <div className="flex justify-between items-center border-b-2 border-gray-300 min-h-24 p-5">
       <div>
@@ -23,7 +27,13 @@ const FoodInfo = ({ info }) => {
         </p>
       </div>
       <div>
-        <Button variant="outlined" className="text-green-600">
+        <Button
+          onClick={() => {
+            addToCart(info);
+          }}
+          variant="outlined"
+          className="text-green-600"
+        >
           ADD
         </Button>
       </div>
