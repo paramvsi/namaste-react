@@ -10,23 +10,28 @@ import RestaurantDetails from "./main/restraunts/restaurant-details/RestaurantDe
 import { User } from "./user/User";
 import Register from "./user/register/Register";
 import Login from "./user/login/Login";
+import { CartProvider } from "./cart/CardContext";
+import Cart from "./cart/Cart";
 
 const App = () => {
   return (
     <div>
-      <BrowserRouter>
-        <Header />
-        <Routes>
-          <Route path="restaurant/:id" element={<RestaurantDetails />} />
-          <Route path="product/:id" element={<Product />} />
-          <Route path="user" element={<User />} />
-          <Route path="login" element={<Login />} />
-          <Route path="signup" element={<Register />} />
-          <Route path="/" element={<Main />} />
-          <Route path="*" element={<Page404 />} />
-        </Routes>
-      </BrowserRouter>
-      <Footer />
+      <CartProvider>
+        <BrowserRouter>
+          <Header />
+          <Routes>
+            <Route path="restaurant/:id" element={<RestaurantDetails />} />
+            <Route path="product/:id" element={<Product />} />
+            <Route path="cart" element={<Cart />} />
+            <Route path="user" element={<User />} />
+            <Route path="login" element={<Login />} />
+            <Route path="signup" element={<Register />} />
+            <Route path="/" element={<Main />} />
+            <Route path="*" element={<Page404 />} />
+          </Routes>
+        </BrowserRouter>
+        <Footer />
+      </CartProvider>
     </div>
   );
 };

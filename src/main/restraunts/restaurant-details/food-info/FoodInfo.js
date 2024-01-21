@@ -3,10 +3,13 @@ import React from "react";
 import { MdCurrencyRupee } from "react-icons/md";
 import vegUrl from "../../../../assets/images/veg.png";
 import nonVegUrl from "../../../../assets/images/non-veg.png";
+import { useCart } from "../../../../cart/CardContext";
 
 const FoodInfo = ({ info }) => {
-  const addToCart = (product) => {
-    console.log(product);
+  const { addToCart } = useCart();
+
+  const handleAddToCart = (product) => {
+    addToCart(product);
   };
 
   return (
@@ -29,7 +32,7 @@ const FoodInfo = ({ info }) => {
       <div>
         <Button
           onClick={() => {
-            addToCart(info);
+            handleAddToCart(info);
           }}
           variant="outlined"
           className="text-green-600"

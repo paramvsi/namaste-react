@@ -12,7 +12,7 @@ const Navbar = () => {
     { component: <TbDiscount2 />, name: "Offers", to: "/offers" },
     { component: <MdOutlineSupportAgent />, name: "Help", to: "/help" },
     { component: <FaUser />, name: "Sign In", to: "/login" },
-    { component: <FaCartPlus />, name: "Cart", to: "/" },
+    { component: <FaCartPlus />, name: "Cart", to: "/cart" },
   ];
   return (
     <nav className="flex justify-between items-center ">
