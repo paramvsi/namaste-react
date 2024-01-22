@@ -8,11 +8,10 @@ import { useCart } from "../../../../cart/CardContext";
 const FoodInfo = ({ info, remove }) => {
   const { addToCart, removeFromCart } = useCart();
 
-  const handleAddToCart = (product, add) => {
+  const handleAddToCart = (product) => {
     if (!remove) {
       addToCart(product);
     } else {
-      console.log();
       removeFromCart(product.id);
     }
   };
