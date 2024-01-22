@@ -5,11 +5,16 @@ import vegUrl from "../../../../assets/images/veg.png";
 import nonVegUrl from "../../../../assets/images/non-veg.png";
 import { useCart } from "../../../../cart/CardContext";
 
-const FoodInfo = ({ info }) => {
-  const { addToCart } = useCart();
+const FoodInfo = ({ info, remove }) => {
+  const { addToCart, removeFromCart } = useCart();
 
-  const handleAddToCart = (product) => {
-    addToCart(product);
+  const handleAddToCart = (product, add) => {
+    if (!remove) {
+      addToCart(product);
+    } else {
+      console.log();
+      removeFromCart(product.id);
+    }
   };
 
   return (
@@ -37,7 +42,7 @@ const FoodInfo = ({ info }) => {
           variant="outlined"
           className="text-green-600"
         >
-          ADD
+          {remove ? "REMOVE" : "ADD"}
         </Button>
       </div>
     </div>
