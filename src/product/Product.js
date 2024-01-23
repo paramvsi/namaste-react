@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import Restraunts from "../main/restraunts/Restraunts";
 import { CATEGORIES_DATA } from "../data/categories.ts";
 
@@ -8,6 +8,12 @@ const Product = () => {
   const params = useParams();
   const [subTitle, setSubTitle] = useState();
   const [restaurants, setRestaurants] = useState([]);
+  const location = useLocation();
+
+  // Scroll to the top of the page whenever the location changes
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
 
   useEffect(() => {
     const item = CATEGORIES_DATA.find((cat) => cat.name === params.id);

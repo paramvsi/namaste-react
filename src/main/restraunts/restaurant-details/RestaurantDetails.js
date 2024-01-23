@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import RestaurantHeader from "./restaurant-header/RestaurantHeader";
 import FoodCategory from "./food-category/FoodCategory";
 import DetailsShimmer from "./DetailsShimmer";
@@ -12,6 +12,12 @@ const RestaurantDetails = () => {
   const [open, setOpen] = useState("Recommended");
 
   const handleOpen = (value) => setOpen(open === value ? "" : value);
+  const location = useLocation();
+
+  // Scroll to the top of the page whenever the location changes
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
 
   useEffect(() => {
     const apiUrl = `https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=17.4698577&lng=78.3578246&restaurantId=${params.id}&catalog_qa=undefined&submitAction=ENTER`;
