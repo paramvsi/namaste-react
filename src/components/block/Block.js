@@ -1,7 +1,16 @@
 import React from "react";
 import { MdOutlineStars } from "react-icons/md";
 
-const Block = ({ name, imgId, rating, time, cuisines, location }) => {
+const Block = ({
+  name,
+  imgId,
+  rating,
+  time,
+  cuisines,
+  location,
+  discount,
+  showOffers,
+}) => {
   const baseUrl =
     "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/";
   return (
@@ -11,6 +20,11 @@ const Block = ({ name, imgId, rating, time, cuisines, location }) => {
         src={baseUrl + imgId}
         alt={name}
       />
+      {showOffers && (
+        <h1 className="absolute text-md lg:text-[23px] font-extrabold mt-[166px] ml-1 text-white bg-gradient-to-t from-black via-black to-transparent">
+          {discount.header}, {discount.subHeader}
+        </h1>
+      )}
       <h4 className="font-semibold text-gray-800">
         {name.length > 30 ? name.substring(0, 30) + "...." : name}
       </h4>

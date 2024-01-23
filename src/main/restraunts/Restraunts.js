@@ -3,7 +3,7 @@ import Block from "../../components/block/Block";
 import { RESTAURANTS } from "../../data/restaurants";
 import { Link } from "react-router-dom";
 
-const Restraunts = ({ restaurants, filter }) => {
+const Restraunts = ({ restaurants, filter, showOffers }) => {
   const [restraunts, setRestraunts] = useState([]);
   const [filterRestaurant, setFilterRestaurants] = useState([]);
 
@@ -90,6 +90,8 @@ const Restraunts = ({ restaurants, filter }) => {
             rating={restaurant.info.avgRating}
             cuisines={mapCuisines(restaurant)}
             time={restaurant.info.sla.deliveryTime}
+            discount={restaurant.info.aggregatedDiscountInfoV3}
+            showOffers={showOffers}
           />
         </Link>
       ))}
