@@ -14,6 +14,7 @@ import { CartProvider } from "./cart/CardContext";
 import Cart from "./cart/Cart";
 import Offers from "./offers/Offers";
 import Help from "./help/Help";
+import Search from "./search/Search";
 
 const App = () => {
   return (
@@ -24,6 +25,7 @@ const App = () => {
           <Routes>
             <Route path="restaurant/:id" element={<RestaurantDetails />} />
             <Route path="product/:id" element={<Product />} />
+            <Route path="search" element={<Search />} />
             <Route path="cart" element={<Cart />} />
             <Route path="help" element={<Help />} />
             <Route path="offers" element={<Offers />} />
