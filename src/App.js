@@ -13,6 +13,7 @@ import Login from "./user/login/Login";
 import { CartProvider } from "./cart/CardContext";
 import Cart from "./cart/Cart";
 import Offers from "./offers/Offers";
+import Help from "./help/Help";
 
 const App = () => {
   return (
@@ -24,6 +25,7 @@ const App = () => {
             <Route path="restaurant/:id" element={<RestaurantDetails />} />
             <Route path="product/:id" element={<Product />} />
             <Route path="cart" element={<Cart />} />
+            <Route path="help" element={<Help />} />
             <Route path="offers" element={<Offers />} />
             <Route path="user" element={<User />} />
             <Route path="login" element={<Login />} />
