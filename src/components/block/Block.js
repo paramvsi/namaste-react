@@ -21,7 +21,7 @@ const Block = ({
         alt={name}
       />
       {showOffers && (
-        <h1 className="absolute text-md lg:text-[23px] font-extrabold mt-[166px] ml-1 text-white bg-gradient-to-t from-black via-black to-transparent">
+        <h1 className="absolute text-[10px] lg:text-lg  font-extrabold mt-[65px] lg:mt-[166px] ml-1 text-white bg-gradient-to-t from-black via-black to-transparent">
           {discount.header}, {discount.subHeader}
         </h1>
       )}
