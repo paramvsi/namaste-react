@@ -6,7 +6,7 @@ import nonVegUrl from "../../../../assets/images/non-veg.png";
 import { useCart } from "../../../../cart/CardContext";
 
 const FoodInfo = ({ info, remove }) => {
-  const { addToCart, removeFromCart } = useCart();
+  const { addToCart, removeFromCart, cartItems } = useCart();
 
   const handleAddToCart = (product) => {
     if (!remove) {
@@ -16,8 +16,14 @@ const FoodInfo = ({ info, remove }) => {
     }
   };
 
+  const cartContains = (productId) => {
+    const items = cartItems.filter((c) => c.id === productId);
+    info.cartLength = items.length;
+    return items && items.length > 0;
+  };
+
   return (
-    <div className="flex justify-between items-center border-b-2 border-gray-300 min-h-24 p-5">
+    <div className="flex justify-between items-center border-b-2 border-gray-300 min-h-24 p-0 lg:p-5">
       <div>
         <p className="text-md text-gray-800 ">
           <span className="mx-1">
@@ -39,9 +45,13 @@ const FoodInfo = ({ info, remove }) => {
             handleAddToCart(info);
           }}
           variant="outlined"
-          className="text-green-600"
+          className="text-green-600 w-14 lg:w-24 px-3 py-2"
         >
-          {remove ? "REMOVE" : "ADD"}
+          {remove
+            ? "REMOVE"
+            : cartItems.length > 0 && cartContains(info.id)
+            ? info.cartLength + " +"
+            : "ADD"}
         </Button>
       </div>
     </div>
