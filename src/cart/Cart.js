@@ -14,7 +14,9 @@ const Cart = () => {
       </h2>
       <p className="text-md lg:text-xl text-gray-800 border-b-2 border-gray-400">
         Items in your cart{" "}
-        <span className="font-semibold">{cartItems?.length}</span>
+        <span className="font-semibold mx-2 text-red-600">
+          {cartItems?.length}
+        </span>
       </p>
       <ul>
         {cartItems.length > 0 ? (
