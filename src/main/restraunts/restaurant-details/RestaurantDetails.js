@@ -29,6 +29,7 @@ const RestaurantDetails = () => {
         }
         const data = await response.json();
         setRestaurant(data.data.cards[0].card.card.info);
+
         const card = data.data.cards.find((c) => !!c.groupedCard);
         const cards = card.groupedCard.cardGroupMap.REGULAR.cards;
         const foodCats = [];

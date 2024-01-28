@@ -46,7 +46,8 @@ const FoodCategory = ({ foodCategory, open, handleOpen }) => {
             ? foodCategory.itemCards.map((ic) => (
                 <FoodInfo key={ic.card.info.id} info={ic.card.info} />
               ))
-            : foodCategory.categories.map((cat) => (
+            : foodCategory.categories &&
+              foodCategory.categories.map((cat) => (
                 <>
                   <Accordion open={true}>
                     <AccordionHeader className="text-lg font-bold text-gray-800">

@@ -36,7 +36,16 @@ const FoodInfo = ({ info, remove }) => {
           {info.name}
         </p>
         <p className="flex justify-start items-center text-sm text-gray-600">
-          <MdCurrencyRupee className="mr-[0.25px]" /> {info.price / 100}
+          {info.price ? (
+            <>
+              <MdCurrencyRupee className="mr-[0.25px]" /> {info.price / 100}
+            </>
+          ) : (
+            <>
+              <MdCurrencyRupee className="mr-[0.25px]" />{" "}
+              {info.defaultPrice / 100}
+            </>
+          )}
         </p>
       </div>
       <div>

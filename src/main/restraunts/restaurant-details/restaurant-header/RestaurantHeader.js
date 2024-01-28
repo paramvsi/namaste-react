@@ -31,8 +31,12 @@ const RestaurantHeader = ({ restaurant }) => {
       <div className="flex justify-start items-center my-5 text-gray-600">
         <IoMdBicycle className="mr-2" />
         {restaurant.sla.lastMileTravelString} |{" "}
-        <MdCurrencyRupee className="ml-2" />
-        {restaurant.feeDetails.fees[0].fee / 100} delivery fee will apply
+        {restaurant.feeDetails && restaurant.feeDetails.fees && (
+          <>
+            <MdCurrencyRupee className="ml-2" />
+            {restaurant.feeDetails.fees[0].fee / 100} delivery fee will apply
+          </>
+        )}
       </div>
       <div className="w-full border-dashed border-b-2 border-gray-300"></div>
     </>
