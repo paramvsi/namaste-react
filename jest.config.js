@@ -191,4 +191,9 @@ module.exports = {
 
   // Whether to use watchman for file crawling
   // watchman: true,
+
+  rules: {
+    test: /\.(sass|less|css)$/,
+    use: ["style-loader", "css-loader", "less-loader"],
+  },
 };
