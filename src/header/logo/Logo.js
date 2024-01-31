@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Logo = () => {
   return (
     <Link
-      data-testId={"logo"}
+      data-testid={"logo"}
       to={"/"}
       className="flex justify-start items-center cursor-pointer"
     >

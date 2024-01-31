@@ -18,7 +18,7 @@ const Navbar = () => {
 
   const { cartItems } = useCart();
   return (
-    <nav data-testId={"navbar"} className="flex justify-between items-center ">
+    <nav data-testid={"navbar"} className="flex justify-between items-center ">
       {links.map((link) => (
         <Link key={link.name} to={link.to}>
           <div className="flex items-center text-sm mx-2 text-gray-800 lg:text-xl lg:mx-6 cursor-pointer hover:text-red-600">
