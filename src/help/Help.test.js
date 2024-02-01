@@ -48,10 +48,5 @@ describe("Help Component", () => {
     expect(
       screen.getByText("You can email us your issue on support@azfoods.com")
     ).toBeInTheDocument();
-
-    // Click on the first accordion header again to close it
-    fireEvent.click(
-      screen.getByText("I want to partner my restaurant with AZ")
-    );
   });
 });
