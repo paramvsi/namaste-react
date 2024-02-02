@@ -2,7 +2,7 @@ import { BIRYANI } from "./biriyani";
 import { CHINESE } from "./chinese";
 import { PIZZA } from "./pizza";
 
-export const CATEGORIES: Category[] = [
+export const CATEGORIES = [
   {
     id: "750592",
     imageId: "v1675667625/PC_Creative%20refresh/Biryani_2.png",
@@ -353,20 +353,3 @@ export const CATEGORIES_DATA = [
     data: CHINESE,
   },
 ];
-
-export interface Category {
-  id: string;
-  imageId: string;
-  action: {
-    link: string;
-    text: string;
-    type: string;
-  };
-  entityType: string;
-  accessibility: {
-    altText: string;
-    altTextCta: string;
-  };
-  entityId: string;
-  frequencyCapping: any;
-}
