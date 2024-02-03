@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useLocation, useParams } from "react-router-dom";
 import Restraunts from "../main/restraunts/Restraunts";
-import { CATEGORIES_DATA } from "../data/categories.ts";
+import { CATEGORIES_DATA } from "../data/categories";
 
 const Product = () => {
   // Fetch product details based on productId
