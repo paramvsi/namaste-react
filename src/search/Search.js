@@ -2,14 +2,13 @@ import React from "react";
 import { FaSearch } from "react-icons/fa";
 import Categories from "../main/categories/Categories";
 
-const Search = () => {
-  const handleSearch = (value) => {
-    console.log(value);
-  };
+const Search = ({ handleSearch }) => {
   return (
     <div className="w-full lg:w-3/4 m-auto items-center h-dvh border-b-[1px] border-b-gray-200 p-4 lg:p-16">
       <form
-        onSubmit={handleSearch}
+        onSubmit={() => {
+          handleSearch();
+        }}
         style={{ display: "flex", alignItems: "center" }}
       >
         <input
