@@ -1,13 +1,9 @@
 import React from "react";
 import { Controller, useForm } from "react-hook-form";
 
-const Login = () => {
+const Login = ({ onSubmit }) => {
   const { handleSubmit, control } = useForm();
 
-  const onSubmit = (data) => {
-    // Perform login logic here with the form data
-    console.log("Login data:", data);
-  };
   return (
     <div className="w-[95%] h-screen lg:h-[500px] flex items-center justify-center m-auto">
       <form
