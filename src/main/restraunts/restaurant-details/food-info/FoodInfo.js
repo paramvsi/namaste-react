@@ -1,8 +1,8 @@
 import { Button } from "@material-tailwind/react";
 import React from "react";
 import { MdCurrencyRupee } from "react-icons/md";
-import vegUrl from "../../../../assets/images/veg.png";
-import nonVegUrl from "../../../../assets/images/non-veg.png";
+// import vegUrl from "../../../../assets/images/veg.png";
+// import nonVegUrl from "../../../../assets/images/non-veg.png";
 import { useCart } from "../../../../cart/CardContext";
 
 const FoodInfo = ({ info, remove }) => {
@@ -27,11 +27,11 @@ const FoodInfo = ({ info, remove }) => {
       <div>
         <p className="text-md text-gray-800 ">
           <span className="mx-1">
-            {info.itemAttribute.vegClassifier === "VEG" ? (
+            {/*  {info.itemAttribute.vegClassifier === "VEG" ? (
               <img className="w-4" src={vegUrl} alt="veg" />
             ) : (
               <img className="w-4" src={nonVegUrl} alt="non veg" />
-            )}
+            )} */}
           </span>
           {info.name}
         </p>
