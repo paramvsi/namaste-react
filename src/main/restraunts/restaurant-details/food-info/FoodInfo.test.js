@@ -1,6 +1,6 @@
 import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
-import { CartProvider } from "../../../../cart/CardContext";
+import { CartProvider, useCart } from "../../../../cart/CardContext";
 import FoodInfo from "./FoodInfo";
 import "@testing-library/jest-dom";
 
@@ -11,9 +11,6 @@ const mockInfo = {
   defaultPrice: 500,
   // Add other properties as needed
 };
-
-const addToCartMock = jest.fn();
-const removeCartMock = jest.fn();
 
 // Mock the addToCart function
 jest.mock("../../../../cart/CardContext", () => ({
@@ -65,5 +62,16 @@ describe("FoodInfo Component", () => {
     fireEvent.click(screen.getByText("REMOVE"));
   });
 
-  // Add more test cases as needed
+  it("handles handle cart items", () => {
+    const { cartItems } = useCart();
+    cartItems.push(mockInfo);
+
+    render(
+      <CartProvider>
+        <FoodInfo info={mockInfo} />
+      </CartProvider>
+    );
+
+    expect(screen.getByText("ADD")).toBeInTheDocument();
+  });
 });
