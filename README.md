@@ -75,8 +75,9 @@ Food ordering app
 Using Swiffy API
 Responsive for mobile
 Test cases are written properly.
-We can test whole application using cors plugin as its using live swiggy data.
 
 ### Link to the app
 
 https://dazzling-babka-3fa2af.netlify.app/
+
+We can test whole application using cors plugin as its using live swiggy data.
